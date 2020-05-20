@@ -21,3 +21,7 @@
 # Amostras aleatorias simples >>= um determinado numero de elementos e retirado da populacao de forma aleatoria; => todos os elementos da populacao alvo do processo de amostragem, devem ter as mesmas chances de serem selecionadas para fazer parte da amostra.
 # Na amostra estratificada => as populacoes estao divididas nos chamados estratos (caracterisitcas comuns dos individuos, por exemplo, raca, religiao, tipo sanguineo, regiao, etc)
 # Na amostragem sistematica e escolhido um elemento aleatorio, e a partir dai, a cada N elementos um novo membor e escolhido (por exemplo: 0 escolha +100 escolha +100 escolha +100 escolha ...). Neste caso suponha que o elemento aleatorio escolhido seja o numero 80 (faz o papel do numero 0 no exemplo acima)
+# </> Funçoes no R que podem nos apoiar no tratamento de amostras:
+# 1- sample() => usada para gerar uma amostra simples com ou sem reposicao
+# 2- strata() => usada para gerar uma amostra estratificada
+# 3- S.SY() => usada para gerar uma amostra sistemática
