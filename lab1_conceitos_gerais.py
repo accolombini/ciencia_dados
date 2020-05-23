@@ -89,3 +89,29 @@
 # n = numero de experimentos
 # 1 - p = probabilidade de fracasso 
 # Voce podera calcular a distribuicao Binomial utilizando ferramentas computacionais ou usando tabelas de distribuicao Binomial
+# <$> DISTRIBUICAO NORMAL <$>
+# Sem duvida e a distribuicao mais importante da estatistica, nela a media dos dados se encontra ao centro. Importante 68% dos dados estao a um desvio padrao da media, cerca de 27% dos dados vao estar ate dois desvios padrao em relacao a media, 4,2% dos dados estarao a tres desvios padrao da media e mais do que tres desvios padrao voce encontrara apenas 0.2% dos dados
+# TEOREMA CENTRAL DO LIMITE </> 
+# Conforme o tamanho da amostra aumenta, a distribuicao das medias amostrais se aproxima cada vez mais da distribuicao NORMAL => mesmo que os dados nao estejam normalmente distribuidos
+# Independente de como os dados estao distribuidos, suas medias estararao normalmente distribuidas (desde que o tamanho da amostra/populacao sejam grande o suficiente).
+# O uso do teorema Central do Limite permite o uso da distribuicao Normal, por exemplo, quando a distribuicao dos dados e continua e nao e normal.
+# <$> DISTRIBUICAO NORMAL PADRAO (Z) <$> >=> como e dificil calcular a probabilidade utilizando uma distribuicao Normal, usamos a distribuicao normal padrao para se calcular a probabilidade
+# Mostra o numero de desvios padroes que o valor esta acima ou abaixo da media (escore Z ou valor Z)
+# Media Zero
+# Desvio padrao 1
+# Usa-se uma formula para calcular a probabilidade de seus dados com relacao a tabela Z >=> Z = (X - μ) / σ
+# Nota >>= lembre-se a maioria das distribuicoes normais nao terao media zero e desvio padrao 1 =>> isso ocorre somente para a distribuicao normal padrao e tambem, lembre-se sempre que o calculo da probabilidade e cumulativo da esquerda para a direita
+# Como saber se uma distribuicao e Normal? |||> a forma mais simples de saber se os dados seguem uma distribuicao normal e gerando um HISTOGRAMA -> e avaliar se ele tem o formato de sino, se ha uma simetria e se os dados estao em torno da media
+# <$> OUTRAS DISTRIBUICOES <$>
+# Podemos encontrar uma distribuicao com cauda curta ||> a media e central, mas existe uma maior concentracao dos dados no entorno a media >>= outra possibilidade encontrar uma distribuicao com cauda longa ||> a media tambem e central mas os dados estao distribuidos em uma maior amplitude |||> essas distribuicoes nao sao Normal no sentido da definicao. ||| Alem dessas podemos encontrar distribuicoes com enviezamento a direita e tambem com enviezamento a esquerda
+# Outra forma para se verificar se os dados estao distribuidos de forma normal e gerando um diagrama de PROBABILIDADE NORMAL ||> se ao fazer isso, envontrar os dados proximos a linha (claro pode haver uma pequena variacao nos extremos) podemos concluir que os dados estao NORMALMENTE DISTRIBUIDOS; caso contrario se houver uma grande variacao em relacao a linha normal ||> conclui-se que os dados NAO ESTAO NORMALMENTE DISTRIBUIDOS
+# Uma forma um pouco mais complexa para testar os dados é usando o TESTE DE SHAPIRO-WILK
+# Teste de Hipotese |||> sempre existe a hipotes nula e a hipotese Ha
+# H0 = dados estao normalmente distribuidos -> hipotese Nula >- aquilo que voce define como criterio a ser avaliado
+# Alfa = 0,05 >- voce escolhe o Alfa (normalnte opta-se por 0,05)
+# Valor de p <= 0,05 => rejeita hipotese nula >- deve ser comparado com se valor de Alfa
+# Valor de p > 0,5 => nao e possivel rejeitar a hipotese nula >- deve ser comparado com se valor de Alfa
+# p-value = 0,001722 [p <= 0,05] -> nao normal ||> ha indicios de que a distribuica nao e NORMAL
+# p-value = 0,05696  [p  > 0,05] -> normal ||> ha indicios de que a distribuica e NORMAL
+# </> Mas QUAL O RIGOR a ser aplicado? </>
+# Nem sempre os dados precisam ser rigorosamente normail. Dados aproximadamente normais sao suficientes para a maioria dos casos sob estudo. Cabe aqui uma avaliacao critica de seus dados e de seu projeto
