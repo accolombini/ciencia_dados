@@ -25,3 +25,67 @@
 # 1- sample() => usada para gerar uma amostra simples com ou sem reposicao
 # 2- strata() => usada para gerar uma amostra estratificada
 # 3- S.SY() => usada para gerar uma amostra sistemática
+# Vamos agora estudar outros conecitos importantes para a estatistica <$> MEDIDAS DE CENTRALIDADE => sua funcao nos fornecer insumos para visualizarmos a centralidade dos dados <$>
+# Medidas de Centralidade => Media; Moda e Mediana
+# Na notacao para medidas de Centralidade usamos simbolos diferentes para representar Centralidade da Amostra e Centralidade da Populacao >>= μ -> Para media da Populacao e X (barrado) -> media da Amostra
+# A Moda e o conjunto de dados mais frequente >>= a moda e sempre o mais frequente que pode ou nao existir
+# A Mediana e remente ao valor central >>= e necessario antes ordenar os valores em ordem crescente. Note que, se o numero de elementos for par teremos que tirar a media dos valores intermediarios para encontrar a Mediana
+# <$> Mediana vesus Media <$>
+# Imagine o seguinte conjunto de dados: [10, 20, 30, 40, 10000]. A media e: 2020 e a Mediana: 30 <=> note que, embora ambas as medidas sejam de centralidade ha uma discrepacia enorme neste caso entre media e mediana. O interessante e que quando se tem um grande volume de dados o calculo da media e mediana nos fornecerao uma boa nocao da centralidade de sua amostra/populacao
+# <$> Medidas de Variabilidade => sua funcao nos mostrar a distancia entre os dados quanto mais distantes os dados, maior sera sua variabilidade <$>
+# Variancia => nos mostra a regularidade de um conjunto de dados em relacao a media, sendo representa por σ² (para o Calculo da Variancia da Populacao) e S² (para o Calculo da Variancia da Amostra)
+# Desvio Padrao => o desvio padrao nos diz a que distancia os dados estao da media sendo calculado pela raiz quadrada da Variancia ~~> quanto maior o desvio padrao, mais afastados os dados estao da media
+# Amplitude => pouco utilizado representa apenas a diferenca entre o maior e o menor elemento de um conjunto de dados (max - min)
+# Nao centrais => Quartis >=> nos ajudam a entender como os dados estao distribuidos >- sendo Q1: 25% dos menores valores do conjunto de dados; Q2: 50% do conjunto de dados (corresponde a mediana); Q3: 75% dos maiores valores do conjunto de dados
+# Amostra <> Populacao possuem notacao especifica em estatistica para media e desvio padrao: Media da Amostra X >- Media da Populacao μ; Desvio Padrao da Amostra S >- Desvio Padrao da Populacao σ
+# Medidas de Centralidade em R >>= Funcoes no R:
+# quantile() => para o calculo dos quartis
+# sd() => para o calculo do desvio padrao
+# var() => para o calculo da variancia
+# mean() => para o calculo da media
+# median() => para o calculo da mediana
+# summary() => visualizacao rapida da base de dados
+# <$> PROBABILIDADE <$>
+# Probabilidade (P) >=> 0 <= p <= 1
+# P = 1 >=> chamado de evento certo
+# P = 0 >=> chamado de evento impossivel
+# Probabilidade de 50% >=> 0,5 ou 1/2
+# Impossivel >=> -0,5 - 20% 2/1 >- enfim valores que fogem do intervalo 0 <= p <= 1
+# Conceitos chaves de Probabilidade
+# Experimento >=> o que está sendo estudado
+# Espaco Amostral >=> sao todas as possibilidades de ocorrencia de um evento
+# Evento >=> resultados ocorridos
+# Exemplo >- Experimento -> jogar moeda; Espaco Amostral >- cara ou coroa; Evento >- coroa (resultado de lancar uma moeda)
+# Eventos Excludentes >=> sao eventos que nao podem ocorrer ao mesmo tempo. Exemplo >- jogar um dado e obter como resultado o numero 1 e par
+# Eventos Nao Excludentes >=> sao eventos que podem ocorrer ao mesmo tempo. Exemplo >- jogar um dado e obter como resultado o numero 2 e par
+# Eventos Dependentes >=> a ocorrencia de um evento afeta o outro. Um tem que ocorrer para depois ocorrer o outro
+# Eventos Independentes >=> a ocorrencia de um evento nao afeta o outro
+# <$> Um unico evento <$>
+# P = (Ocorrencia Espeada)/ (Numero de Eventos Possiveis)
+# Exemplo >- Jogar uma moeda e dar cara: Experimento -> jogar uma moeda; Evento -> dar cara; Espaco Amostral [Cara, Coroa] <=> P = (1)/(2) = 50%
+# <$> EVENTOS EXCLUDENTES <$>
+# Soma-se as probabilidades: Jogar um dado e ser um ou par. Experimento >- jogar um dado; Evento >- ser um ou par. A probabilidade sera calculada por: P = (1/6 + 3/6) = 4/6 ou 66%
+# <$> EVENTOS NAO EXCLUDENTES <$>
+# Soma-se as probabilidaes, diminui-se as sobreposicoes: Jogar um dado e ser 2 ou par. Experimento >- jogar um dado; Evento >- ser 2 ou par. A probabilidade sera calculada por: P = 1/6 + 3/6 - 1/6 = 1/2 ou 50%
+# <$> EVENTOS INDEPENDENTES >>- produto <$>
+# Temos sempre mais de um evento, entao, como eles se relacionam?
+# A relacao entre os eventos sera de multiplicacao. Exemplo: quala probabilidade de jogar dois dados, e dar 1 e 6: Experimento >- jogar dois dados; Evento >- sair um e seis >>= note que os eventos sao independentes, os resultados de um dado nao afetam o outro dado: P = 1/6 * 1/6 = 0.027
+# <$> EVENTOS DEPENDENTES (nao ha reposicao) >>- produto so que e necessario apos realizar o primeiro experimento retira-lo do espaco amostral <$> 
+# Com 6 cartas na mao (A, 2, 3, 4, 5, 6), qual a probabilidade de tirar A no primeiro evento e no segundo tirar 4? P = 1/6 * 1/5 = 0.033 
+# <$> PROBABILIDADE A LONGO PRAZO >>- NO LONGO PRAZO a probabilidade tende a convergir para a media esperada <$>
+# Jogando um dado justo 6 vezes, qual a media esperada? PM = (1 + 2 + 3 + 4 + 5 + 6) / 6 = 3,5 >>- 3,5 e a media esperada, para se chegar a esse valor voce podera ter que realizar o experimento um numero significativamente grande de vezes -> dai o conceito de longo prazo
+# </> TRABALHANDO COM DISTRIBUICOES </>
+# Distribuicoes sao usadas principalmente na teoria da probabilidade mostrando o comportamento de dados aleatorios
+# <$> DISTRIBUICAO BINOMIAL <$>
+# O que é >=> trata-se de uma distribuicao de probabilidade discreta onde certos pre-requisitos precisam ser atendidos:
+# Pre-requisitos >>- Numero fixo de experimentos; Cada experimento pode ter 2 resultados apenas >- sucesso ou fracasso; A probabiidade de suceso deve ser a mesma em cada experimento; Os experimentos sao independentes
+# Exemplo: Se eu jogar uma moeda 5 vezes. Qual a probabilidade de dar cara 3 vezes?
+# O que temos: Numero fixo de experimentos? Sim (5); Cada experimento pode ter 2 resultados apenas: sucesso ou fracasso? Sim cara ou coroa; A probabilidade de sucesso deve ser a mesma em cada experimento? Sim 50% para cada; Os experimentos sao independentes? Sim >>= Note que todas os pre-requisitos de uma distribuicao normal foram atendidos
+# Exemplo: Um cesto tem 10 frutas que pesam entre 3 e 5 quilos. Qual a probabilidade de eu retirar duas frutas, uma de 4 quilos e outra de 3 quilos?
+# O que temos: Numero fixo de experimentos? Sim (2); Cada experimento pode ter 2 resultados apenas: sucesso ou fracasso? Nao; A probabilidade de sucesso deve ser a mesma em cada experimento? Nao da para saber; Os experimentos sao independentes? Sim supondo que as frutas sao devolvidas a cada experimento ou nao se nao houver reposicao >>= logo nao se trata de uma distribuicao Binomial
+# </> ALGUMAS CONVENSOES QUE SERAO UTILIZADAS </>
+# X = total de sucesso esperado do experimento
+# p = probabilidade de sucesso
+# n = numero de experimentos
+# 1 - p = probabilidade de fracasso 
+# Voce podera calcular a distribuicao Binomial utilizando ferramentas computacionais ou usando tabelas de distribuicao Binomial
