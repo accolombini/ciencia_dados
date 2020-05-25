@@ -115,3 +115,82 @@
 # p-value = 0,05696  [p  > 0,05] -> normal ||> ha indicios de que a distribuica e NORMAL
 # </> Mas QUAL O RIGOR a ser aplicado? </>
 # Nem sempre os dados precisam ser rigorosamente normail. Dados aproximadamente normais sao suficientes para a maioria dos casos sob estudo. Cabe aqui uma avaliacao critica de seus dados e de seu projeto
+
+# <$> ESTATISTICA PARAMÉTRICA -> corresponde a Estatística que Estamos estudando <$>
+# Estatística Paramétrica => requer que os dados estejam em conformidade com alguma distribuição, por exemplo, Distribuiçao Normal
+# <$> ESTATISTICA NÃO PARAMÉTRICA -> não será tratada neste momento, ficará fora do escopo inicial proposto pelo curso <$> 
+# Quando os dados não estão em conformidade com alguma distribuição, em outras palavras, quando não se conhece a distribuição dos dados
+
+# </> INTERVALOS DE CONFIANÇA </>
+# É possível inferir características de uma população a partir de uma amostra -> porque? Custo; Viabilidade; Etc.
+# Preço => erro padrão / nível de confiança
+# Riscos => dados ruins, enviesamento
+# Porém ... =>> Como estamos utilizando amostras ... devemos esperar variações no resultado; A primeira amostra pode variar com relação à segunda e assim por diante ...; Mas, o grande detalhe é que podemos "medir" o quanto pode ser esta variação e avaliar se atende ou não as expectativas do projeto em questão
+# Intervalos de Confiança =>> deverá parametrizar mais ou menos a margem de erro estimada.
+# Parâmetro é o valor a ser estimado >- um exemplo de parâmetro aqui é a média, outro parâmetro pode ser a proporção e assim por diante
+# A margem de erro =>> é a variabilidade, para mais ou para menos. A margem de erro é afetada pelo tamanho da amostra, pelo nível de confiança, daí a importância de estar atento aos melhores ajustes para seu objetivo/projeto
+# Nível de confiança =>> de 80% a 99% >- você deverá escolher o nível de confiança, lembrando que sua escolha trará consequências para seu experimento >- Para acompanhar >=> quanto maior o nível de confinça exigido, maior será a probabilidade da amostra estar fora de seu intervalo de confiança >- para cada nível de confiança teremos um valor de Z que será utilizado nos cálculos (este valor de Z irá crescer na medida em que se aumenta o nível de confiança)
+# Tamanho da Amostra (n) 
+# Vamos exemplificar numericamente ...
+# Entre 63 e 67% dos entrevistados pretendem votar em Maria, com um nível de confiança de 95%.
+# Parâmetro (valor a ser estimado) => intenção de voto (proporção)
+# Nível de confiança escolhido => 95%
+# Intervalo de confiança (vem lá da margem de erro) => entre 63 e 67%
+# Erro padrão => 1,96
+# Entrevistados (tamanho da amostra) => 1000
+# Margem de erro (+/-)2%
+# Compensação >- para ajudá-lo na análise dos resultados frente suas escolhas.
+# Quanto mais alto for o nível de confiança => maior será o erro padrão
+# Quanto maior for o tamanho da amostra => menor será o erro padrão
+# Tipos de Intervalos de Confiança:
+# Intervalo de Confiança para a média
+# Intervalo de Confiança para a proporção
+# <$> TESTE DE HIPÓTESE <$>
+# Confirmar ou negar uma premissa usando uma amostra
+# Esta premissa usa um parâmetro, por exemplo, 56% dos brasileiros não gostam de estatística >>- para testar essa premissa deveremos recorrer a um teste de Hipótese
+# Encontrar diferença não é tudo, é preciso saber se esta diferença é estatisticamente significante => isso é muito relevante e fortemente dependente da natureza do seu projeto
+# </> ALGUMAS CONVENSÕES MUNDIALMENTE ADOTADAS PARA O TESTE DE HIPÓTESE </>
+# Hø => hipótese nula => trata-se da alegação daquilo que deseja testar
+# Presume-se inicialmente que Hø é verdadeira, a não ser que existam evidências para provar que não
+# Exemplo => Hø: μ = 100
+# Ha => hipótese alternativa
+# Exemplo: Ha != 100, Ha > 100, Ha < 100
+# Score padrão => erros que seus dados estão abaixo ou acima da média
+# A versão padronizada de sua estatística é chamada de "estatistica de teste"
+# Verificar na versão padronizada de Z. Se a sua estatística de teste estiver próxima de zero ou num intervalo onde os resultados devem estar, então não se pode rejeitar Hø. Agora se estiver próximo a cauda, então podemos rejeitar Hø
+# Alfa (α) => é um valor que você deverá escolher para aplicar no seu teste de hipótese
+# Níveis de Alfa (α): 0,05 ou 0,01 => normalmente sugerido >>= Enterpretar o valor-p >- Valor -P >= alfa: você não deverá rejeitar Hø; Se valor -P <= alfa: você deve rejeitar a Hø; Agora e se o valor -P estiver muito próximo de Alfa => o que fazer??? Neste caso, há autores que consideram o resultado inconclusivo, mas também cabe a sua interpretação sempre com o olhar para seu projeto
+# </> ETAPAS </>
+# 1- Definir o tamanho da sua amostra
+# 2- Coletar os dados
+# 3- Calular as medidas de centralidade => principalmente média e desvio padrão
+# 4- Definir as duas hipóteses: Hø e Ha (hipótese nula e hipótese alternativa)
+# 5- Definir seu valor de Alfa(α)
+# 6- Padronizar seus dados gerando a estatístca de teste
+# 7- Encontrar o valor -p na tabela Z
+# 8- Comparar com seu valor de Alfa(α)
+# 9- Emitir seu veredito => isso será muito importante!!!
+# As fórmulas para Estatística de Teste são:
+# Média => Z = (X - μ) / σ/sqrt(n)
+# Proporção => P = (p^ - pø) / sqrt((pø * (1 - pø)) / n)
+# </> ERROS </>
+# Em testes de hipóteses estamos ujeitos a dois tipos de erros, são eles:
+# Erro do tipo 1 => rejetiar Hø quando não deveria fazê-lo >- por exemplo, chance de ocorrer igual a Alfa(α)
+# Erro do tipo 2 => não rejeitar Hø quando deveria fazê-lo >- depende do tamanho da amostra, que pode não ser adequada
+# IMPORTANTE: se você reduzier o valor de Alfa(α) você reduz a chance de ERRO DO TIPO 1 >- mas também torna mais difícil rejetiar Hø >- você irá precisar de mais dados para poder rejeitar Hø e aumenta a chance de ERRO DO TIPO 2; Aumentando o tamanho de Alfa(α) aumenta a chance de ERRO DO TIPO 1 >- mas fica mais fácil rejeitar Hø e diminui a chance de ERRO DO TIPO 2
+# PORTANTO: o ideal é que você tenha uma amostra grande e um Alfa(α) pequeno
+# <$> DISTRIUIÇÃO T DE STUDENT => é uma distribuição extremamente importante em Estatística <$>
+# Pode se dizer que se trata de um parente próximo da distribuição Normal sendo utilizada sob certas condições:
+# Utilizada quando o tamanho da amostra é reduzido inferior a 30
+# E não se conhece o desvio padrão da POPULAÇÃO >>= É claro que o desvio da AMOSTRA pode ser calculado
+# Custo => Maior variabilidade (por exemplo, num teste de hipótese) <=> numa maior imprecisão 
+# Tendência => maior de encontrar valores nas caudas (caudas maiores)
+# Se n >= 30, se assemelha a uma distribuição NORMAL
+# O grau de liberdade corresponde ao tamanho da amostra menos um (n - 1), exemplo, se n = 15, o grau de liberdade será 14 (tø = 14)
+# Pode se usar T de Student para:
+# Calcular probabilidade
+# Calcular Intervalos de Confiança -> calcula-se o valor de t1 (tø -> você já tem a partir da amostra menos um) => t = (X - μø) / (S / sqrt(n))
+# Executar testes de Hipótese
+# Para se usar T de Student:
+# Calcula-se o valor de t (grau de liberdade) >- pode ser necessário alguma interpolação no caso do uso da tabela
+# Consulta-se a tabela de distribuição t ou usa-se uma ferramenta computacional como R ou Python para calcular a probabilidade
