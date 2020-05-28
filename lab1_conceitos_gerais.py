@@ -194,3 +194,45 @@
 # Para se usar T de Student:
 # Calcula-se o valor de t (grau de liberdade) >- pode ser necessário alguma interpolação no caso do uso da tabela
 # Consulta-se a tabela de distribuição t ou usa-se uma ferramenta computacional como R ou Python para calcular a probabilidade
+# <$> CORRELAÇÃO E REGRESSÃO LINEAR <$>
+# Variáveis => existe uma correlação matemática entre as variáveis envolvidas? Se existe, como posso medir a força dessa relação? É possível usar essa relação para fazer previsões?
+# Para entender o comportamento das variáveis envolvidas no processo, recomenda-se o gráfico de dispersão para uma primeira inspeção visual
+# Sistematizando um pouco >>= no eixo Y do plano cartesiano, normalmente representamos a variável de Resposta ou a variável Dependente (na regressão Linear ||> trata-se do que queremos prever)||> No eixo X do plano cartesiano, normalmente representamos a variável Explanatória ou Independente ||> (na regressão é o que explica ou usamos para prever)
+# Como podemos observar a regressão Linear pressupõe uma linearidade entre as variáveis observadas, essa linearidade pode ser maior ou menor
+
+# </> CORRELAÇÃO e COEFICINETE DE DETERMINAÇÃO [R²]
+# CORRELAÇÃO [R] |||> Mostra a força e a direção da relação entre as variáveis |||> quanto mais próximo de ZERO menor a força da correlação
+# CORRELAÇÃO [R] |||> pode ser um fator entre -1 e 1
+# CORRELAÇÃO [R] |||> de A ~ B é a mesma de B ~ A 
+# Importante ||> é preciso estar atento à direção da correlação!!! Não perca de vista!!! A correlação pode ser direta => mas, também podemos ter uma correlação inversa |||> Correlação positva => significa que as variáveis estão na mesma direção |||> correlação negativa => significa que as variáveis estão em direções opostas
+# Entendendo a força da CORRELAÇÃO =>> pense em intervalos, por exemplo entre 0.7 e 1 -> CORRELAÇÃO forte, e assim por diante, ok:
+# = 1 -> CORRELAÇÃO Perfeita
+# = 0.7 -> CORRELAÇÃO Forte
+# = 0.5 -> CORRELAÇÃO Moderada
+# = 0.25 -> CORRELAÇÃO Fraca
+# = 0 -> Não EXISTE CORRELAÇÃO
+# = -0.25 -> CORRELAÇÃO Fraca
+# = -0.5 -> CORRELAÇÃO Moderada
+# = -0.7 -> CORRELAÇÃO Forte
+# = -1 -> CORRELAÇÃO Perfeita
+# </> COEFICIENTE DE DETERMINAÇÃO R² </>
+# Nos mostra o quanto o modelo consegue explicar os valores
+# Quanto maior R², mais explicativo é seu modelo
+# O Restante da variabilidade está em variáveis que por algum motivo não foram incluídas no modelo
+# VAria entre Zero até 1 (sempre positivo)
+# É calculado a partir do quadrado do coeficiennte de correlaçao (R)
+# Exemplificando => imagine um modelo onde o coeficiente de CORRELAÇÃO R = 0.93 o coeficiente de DETERMINAÇÃO r² = 0.93² = 0.86 |||> isso significa que 86% da variável dependente consigue ser explicada pelas variáveis exploratórias presentes no modelo
+# <$> REGRESSÃO LINEAR => PREVISÃO <$> 
+# Fundamental para se fazer previsões a partir dos dados históricos e da CORRELAÇÃO do seu modelo
+# Para construir a reta de regressão => a intersecção nos mostra o ponto onde a reta corta o eixo Y e a inclinação nos da da o coeficiente de inclinação da reta (regressão linear SIMPLES)
+# </> COMO PREVER? </>
+# Previsão => intersecção (ponto onde corta o eixo Y) + (inclinação (inclinação da reta) * valor a prever)
+# Qualquer software executa esse cálculo automaticamente, neste laboratório usaremo R e Python
+# </> REGRESSÃO LINEAR -> Residuais </>
+# Ocorre com frequência quando a linha de regressão não passa por praticamente nenhum ponto do modelo (há resíduos) -> RESIDUOS são calculados a partir da diferença entre os valores do modelo e a linha de melhor ajuste (linha de regressão -> REGRESSÃO SIMPLES) =>> podem ser calculados medindo a diferença entre o ponto do modelo e a linha de regressão >- Se o ponto estiver acima da linha de regressão seu RESÍDUO será POSITIVO, se estiver abaixo será NEGATIVO, se coincidir com a linha de regressão será NULO. O valor ajustado corresponde ao valor do ponto refletido na linha de melhor ajuste (REGRESSÃO)
+# A diferença de todos os residuais do modelo podem ser usados para se calcular o  ERRO
+# </> OUTLIERS, EXPLORAÇÃO, CORRELAÇÃO NÃO É CAUSA </>
+# OUTLIERS => são valores que fogem do padrão >- podem reduzir drasticamente o coeficiente de CORRELAÇÃO =>> você deverá avaliar seu modelo e entender qual a melhor ação a tomar
+# EXTRAPOLAÇÃO => quando estamos olhando para além dos limites de nossa regressão (inferior ou superior) =>> nestes casos não podemos afirmar que o nosso modelo se comportará exatamente como dentro da análise estudada >>= pode comprometar drasticamente a previsão. ATENÇÃO essa ação nao é proibida, mas fique atento aos resultados
+# CORRELAÇÃO NÃO É CAUSA => por exemplo, pessoas com mais treinamento tem melhor performance >- OU SERÁ >- Elas receberam treinamento porque performaram melhor? ou ainda >- Candidatos vistos como carismáticos obtém mais votos >- ou será >- Candidatos mais votados são vistos como mais carismáticos?
+# CUIDADO -> pode ser que a causa seja uma outra variável, talvez até que não tenha entrado nos estudos >- Tenha sempre muita cautela
