@@ -67,10 +67,9 @@ plt.show()
 print('\nPrevendo velocidade para 22 pés de deslocamento: ', modelo.intercept_ + modelo.coef_ * 22)
 # Uma forma mais direta para fazer a previsão é:
 print('\nNossa variável X é do tipo: ', type(X))
-
 # Vamos olhar um pouco para os Residuos
 print('\nOs Residuos são: \n', modelo._residues)
-# Inspeção visual nos residuos
+# Inspeção visual nos residuos. O uso da biblioteca yellowbrick nos permite uma visão mais precisa dos Residuais >- acompanhe!!
 visualizador = ResidualsPlot(modelo)
 visualizador.fit(X, y)
 visualizador.poof()
