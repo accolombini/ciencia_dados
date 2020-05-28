@@ -65,6 +65,11 @@ plt.plot(X, modelo.predict(X), color='red')
 plt.show()
 # Fazendo a previsão considerando deslocamento igual a 22 pés
 print('\nPrevendo velocidade para 22 pés de deslocamento: ', modelo.intercept_ + modelo.coef_ * 22)
+# Fazendo a previsão usando o método predict
+var_prev = np.array(22)
+print('\nO tipo da variável usada para realizar as previsões é: ', type(var_prev))
+var_prev = var_prev.reshape(-1, 1)
+print('\nPrevisão usando o método predict() ', modelo.predict(var_prev))
 # Uma forma mais direta para fazer a previsão é:
 print('\nNossa variável X é do tipo: ', type(X))
 # Vamos olhar um pouco para os Residuos
