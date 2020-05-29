@@ -236,3 +236,38 @@
 # EXTRAPOLAÇÃO => quando estamos olhando para além dos limites de nossa regressão (inferior ou superior) =>> nestes casos não podemos afirmar que o nosso modelo se comportará exatamente como dentro da análise estudada >>= pode comprometar drasticamente a previsão. ATENÇÃO essa ação nao é proibida, mas fique atento aos resultados
 # CORRELAÇÃO NÃO É CAUSA => por exemplo, pessoas com mais treinamento tem melhor performance >- OU SERÁ >- Elas receberam treinamento porque performaram melhor? ou ainda >- Candidatos vistos como carismáticos obtém mais votos >- ou será >- Candidatos mais votados são vistos como mais carismáticos?
 # CUIDADO -> pode ser que a causa seja uma outra variável, talvez até que não tenha entrado nos estudos >- Tenha sempre muita cautela
+# <$> CONDIÇÕES E REGRESSÃO LINEAR MÚLTIPLA <$>
+# Uma importante condição é a FORÇA da correlação => não importa se é positiva ou negativa, o importante é a força da CORRELAÇÃO =>> Para bons resultados busque por CORRELAÇÕES MODERADA OU FORTE
+
+# A outra importante condição é o COEFICIENTE DE DETERMINAÇÃO [R²], sendo os parâtros a seguir desejáveis:
+# > 0.7 -> ÓTIMO
+# Entre eles -> ? >- Cabe ao analista decidir se vai usar o modelo para fazer previsão
+# 0 < R² < 0.3 -> Ruins
+# Outro item importante são so RESIDUAIS PADRONIZADS
+# Verifique se eles se encontram próximos de uma Distribuição NORMAL -> Nota estamos falando dos Residuos Padronizados, ok
+
+# </> REGRESSÃO LINEAR SIMPLES E MÚLTIPLA </.
+# SIMPLES => uma variável exploratória X (independente) para prever uma variável dependente Y (aquela que se deseja explicar) -> Y ~ X
+# MÚLTIPLA => duas ou mais variáveis exploratórias X1, X2, ..., XN (independentes) para prever uma variável dependente Y (aquela que se deseja explicar) -> Y ~ X1 + X2 + XN
+# ANALISAR CADA X COM Y
+# Analisar cada variável independente com Y individulamente
+# Gerar gráficos de dispersão individuais
+# Buscar redundâncias [mesmos efeitos de X sobre Y]: veremos isso mais à frente -> basicamente se existem variáveis exploratórias que explicam a variável dependente da mesma forma, eles devem ser eliminadas, pois poderão prejudicar o modelo
+# Outro ponto importante é o COEFICIENTE DE DETERMINAÇÃO [R²]
+# Lembrando que R² é o percentual de variação da variável de resposta que é explicada pelo modelo
+# Quando se colocam mais variáveis no modelo a tendência é que R² aumente, mesmo que a adição na variável não aumenta a precisão do modelo -> daí a necessidade de avaliar com cautela se uma variável deve ou não fazer parte do modelo
+# Para isso, utiliza-se R² ajustado, que ajusta a variação do modelo de acordo com o número de variáveis independentes que é incluída no modelo
+# R² ajustado vai ser sempre menor que R²
+# Outro conceito importante é a COLINEARIDADE E PARCIMÔNIA
+# COLINEARIDADE => duas variáveis independentes que são correlacionadas
+# Incluir variáveis independentes colineares pode prejudicar o modelo, criando previsões não confiáveis
+# PARCIMÔNIA => não colocar variáveis que não melhorem o modelo em nada >- criar MODELOS PARCIMONIOSOS
+# Requisitos básicos
+# 1- Linearidade entre a variável dependente e as variáveis independentes
+# 2- Que as variáveis sejam normalmente distribuídas >- a variável dependente não necessita ser normalmente distribuída
+# 3- Pouca ou nenhuma colinearidade 
+# E quanto aos RESIDUAIS
+# Próximos a distribuição NORMAL
+# Variância constante em relação a linha de melhor ajuste
+# independentes (sem padrão)
+# Nota >- a variável dependente não necessita ser normalmente distribuída
