@@ -271,3 +271,19 @@
 # Variância constante em relação a linha de melhor ajuste
 # independentes (sem padrão)
 # Nota >- a variável dependente não necessita ser normalmente distribuída
+# <$> REGRESSÃO LINEAR => FÓRMULAS <$>
+# O processo de cálculo segue os seguintes passos:
+# 1- Correlação
+# 2- Inclinação
+# 3- Interceptação
+# 4- Previsão
+# CORRELAÇÃO DE PEARSON => r = cov(X, Y) / SQRT(var(x) * var(y))
+# INCLINAÇÃO => m = r (Sy / Sx)
+# INTERCEPTAÇÃO -> ponto em que a reta intercepta o eixo Y => b = y - mx
+# PREVISÃO => P = b + (m * v) -> onde v é o valor que você está buscando prever o resultado
+# <$> REGRESSÃO LOGÍSTICA <$>
+# Semelhante a regressão Linear, porém a variável de resposta é binária: sucesso ou fracasso
+# 1- Sucesso
+# 0- Fracasso
+# O sucesso ou o fracasso é representado através de probabilidade (em outras palavras você terá a probabilidade de Sucesso ou a probabilidade de Fracasso)
+# A Regressão Logística também pode ser Simples ou Múltipla
