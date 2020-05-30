@@ -319,4 +319,8 @@
 # Probabilidade exata, por exemplo "ocorrência de dois no segundo dia" -> dpois(x, λ)
 # Probabilidade menos que, ou mais que (lower.tail = F) -> ppois(x, λ, lower.tail=F)
 # Fique atento quando estiver trabalhando em eventos do tipo menor que ou maior que você deverá computar o valor a menos em depois -> isto é necessário porque aquele valor não está incluído no cálcuo da probabilidade
-#
+
+# <$> Qui quadrado <$>
+# Queremos entender se as variáveis são ou não independetes -> influenciam ou não uma na outra?
+# Partimos de uma hipótese nula H0 -> não existe influência além do acaso -> por exemplo. Precisamos agora encontrar um teste para avaliar se há ou não influência => é aí que entra o Qui quadrado => que nos permite realizar teste de hipóteses
+# Na linguagem R usamos -> chisq.test(X) >- teste de Qui quadrado
