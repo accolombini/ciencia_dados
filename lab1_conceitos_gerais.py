@@ -159,7 +159,7 @@
 # A versão padronizada de sua estatística é chamada de "estatistica de teste"
 # Verificar na versão padronizada de Z. Se a sua estatística de teste estiver próxima de zero ou num intervalo onde os resultados devem estar, então não se pode rejeitar Hø. Agora se estiver próximo a cauda, então podemos rejeitar Hø
 # Alfa (α) => é um valor que você deverá escolher para aplicar no seu teste de hipótese
-# Níveis de Alfa (α): 0,05 ou 0,01 => normalmente sugerido >>= Enterpretar o valor-p >- Valor -P >= alfa: você não deverá rejeitar Hø; Se valor -P <= alfa: você deve rejeitar a Hø; Agora e se o valor -P estiver muito próximo de Alfa => o que fazer??? Neste caso, há autores que consideram o resultado inconclusivo, mas também cabe a sua interpretação sempre com o olhar para seu projeto
+# Níveis de Alfa (α): 0,05 ou 0,01 => normalmente sugerido >>= Interpretar o valor -P >- Valor -P >= alfa: você não deverá rejeitar Hø; Se valor -P <= alfa: você deve rejeitar a Hø; Agora e se o valor -P estiver muito próximo de Alfa => o que fazer??? Neste caso, há autores que consideram o resultado inconclusivo, mas também cabe a sua interpretação sempre com o olhar para seu projeto
 # </> ETAPAS </>
 # 1- Definir o tamanho da sua amostra
 # 2- Coletar os dados
@@ -175,8 +175,8 @@
 # Proporção => P = (p^ - pø) / sqrt((pø * (1 - pø)) / n)
 # </> ERROS </>
 # Em testes de hipóteses estamos ujeitos a dois tipos de erros, são eles:
-# Erro do tipo 1 => rejetiar Hø quando não deveria fazê-lo >- por exemplo, chance de ocorrer igual a Alfa(α)
-# Erro do tipo 2 => não rejeitar Hø quando deveria fazê-lo >- depende do tamanho da amostra, que pode não ser adequada
+# Erro do Tipo 1 => rejetiar Hø quando não deveria fazê-lo >- por exemplo, chance de ocorrer igual a Alfa(α)
+# Erro do Tipo 2 => não rejeitar Hø quando deveria fazê-lo >- depende do tamanho da amostra, que pode não ser adequada
 # IMPORTANTE: se você reduzier o valor de Alfa(α) você reduz a chance de ERRO DO TIPO 1 >- mas também torna mais difícil rejetiar Hø >- você irá precisar de mais dados para poder rejeitar Hø e aumenta a chance de ERRO DO TIPO 2; Aumentando o tamanho de Alfa(α) aumenta a chance de ERRO DO TIPO 1 >- mas fica mais fácil rejeitar Hø e diminui a chance de ERRO DO TIPO 2
 # PORTANTO: o ideal é que você tenha uma amostra grande e um Alfa(α) pequeno
 # <$> DISTRIUIÇÃO T DE STUDENT => é uma distribuição extremamente importante em Estatística <$>
@@ -324,3 +324,52 @@
 # Queremos entender se as variáveis são ou não independetes -> influenciam ou não uma na outra?
 # Partimos de uma hipótese nula H0 -> não existe influência além do acaso -> por exemplo. Precisamos agora encontrar um teste para avaliar se há ou não influência => é aí que entra o Qui quadrado => que nos permite realizar teste de hipóteses
 # Na linguagem R usamos -> chisq.test(X) >- teste de Qui quadrado
+# <$> ANOVA <$>
+# Interessante quando há necessidade de tomada de decisão entre opções, onde é possível observar grupos que tenham certa afinidade, mas deve se escolher o mais adequado para seu projeto. Entender se a variação entre os grupos tem impacto, ou em outras palavras, ela é siginificativa para sua tomada de decisão? Como tomar a melhor decisão nestes casos? As variações observadas são fruto do acaso? É uma função da amostra coletada? Normalmente temos uma variável independente e outra variável dependente (observações)
+# Quando temos uma variação entre dois elementos => Teste T de Student -> é útil para comparar duas populações e se for preciso comparar, por exemplo, três ou mais? O que esperar do Teste T de Student
+# Testar a hipótese
+# Comparar duas médias
+# Alguns pré-requisitos:
+#   1- Duas populações são independentes => uma não pode influenciar na outra
+#   2- Variável dependente normalmente distribuída
+#   3- Variância entre as duas variáveis é aproximada
+#   4- Não se recomenda o teste T de Student para mais de 2 populações |||> É para esses casos que usamos o ANOVA
+# <$> ANÁLISE DE VARIAÇÃO <$>
+# Por exemplo, queremos testar 3 medicamentos recomendados para tratamento de uma certa patologia. Ambos são aprovados pela ANVISA, mas com preços significativamente diferentes. Deseja-se decidir pela compra de um dos medicamentos. Observe que temos três populações, portanto, não se aplica o teste T de Student
+# Pergunta -> Quantas horas o medicamento leva para fazer efeito?
+# Grupos -> medicamento A, B e C => Variável Independente
+# Observações -> análise da tabela das populações testadas => Variável Dependente
+# O que precisamos saber ||> se as variações observadas ocorrem entre os grupos (medicamentos A, B e C) ou entre as populações observadas
+# </> Quando temos mais de dois grupos devemos usar a ANÁLISE DE VARIÂNCIA ou ANOVA </>
+# Teste de Hipótese
+# Usada para comparar 3 ou mais grupos
+# Uma variável quantitativa e uma ou mais variáveis categóricas
+# Em vez de comparações em pares (como o teste T de Student) de grupos, "olha" todo o conjunto
+# Busca a variação entre os grupos comparado a variação "dentro" dos grupos
+#   Teste de Hipótese:
+#       H0 -> não há diferença significativa no tempo de cura entre as diferentes marcas de remédio (considerando o exemplo dos medicamentos) |||> supoem-se inicialmente H0 como sendo verdadeira
+#       Ha -> existe uma diferença significativa no tempo de cura entre as diferentes marcas de remédio
+# Mas, porque não se comparam 2 em 2?
+# Impacata em um grande número de comparações
+#   Por exemplo, imagina se ao invés de 3 tívessemos analisando 20 medicamentos, isso implicaria em termos 190 comparações
+#   Existe uma grande chance de termos Erros do Tipo I ||> estudados na aula de teste de Hipótese (rejetiar Hø quando não deveria fazê-lo)
+# </> TESTE F </>
+# F(X,Y)
+# X = Graus de liberdade => corresponde ao número de grupos -1
+# Y = Graus de liberdade no denominador => corresponde ao número de observações realizadas - o número de grupos analisados
+# Hipótese Nula Hø => não há variação significativa entre os grupos
+# Valor -P < α => há variação significativa entre os grupos
+# Complicando um pouco imagine que no nosso caso do medicamento queremos entender se a variação ocorre entre grupos (medicamentos de marcas diferentes) e também estamos interessados em observar os efeitos por sexo (separando a população por sexo) |||> para este caso teremos ANÁLISE DE VARIÂNCIA DE DOIS FATORES
+# Imagine que os teste concluiram que há variação significativa ||> o que fazer? E AGORA? Note que, neste caso, estamos rejeitando a hipótese nula e estamos aceitando a hipótese alternativa Ha
+# Para estes casos temos o teste de Tukey
+# USANDO R PARA FACILITAR NOSSA VIDA
+# Teste T de Student
+#   t.test(y~x)
+# Análise de Variância
+#   Um fator -> só consideramos o remédio
+#   aov(V.Dependente ~V.Independente, data=dados)
+#   Dois fatores -> consideramos o remédio e o sexo por exemplo
+#   aov(V.Dependente ~V.Independente * V.Iependente, data=dados)
+# Teste de Tukey
+#   TukeyHSD(aov)
+# No R não é preciso informar o grau de liberdade ele determina o grau de liberdade automaticamente
