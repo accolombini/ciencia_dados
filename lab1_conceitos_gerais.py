@@ -287,3 +287,36 @@
 # 0- Fracasso
 # O sucesso ou o fracasso é representado através de probabilidade (em outras palavras você terá a probabilidade de Sucesso ou a probabilidade de Fracasso)
 # A Regressão Logística também pode ser Simples ou Múltipla
+
+# <$> ANÁLISE EXPLORATÓRIA DE DADOS <$>
+# EDA => Análise Exploratória de Dados -> (AED)
+# John Wilder Tukey 1977 -> Exploratory Data Analysis (EDA - AED)
+# Conceitos de EDA
+# 1- Busca obter informações ocultas sobre os dados
+# 1a- Variação
+# 1b- Anomalias
+# 1c- Distribuição
+# 1d- Tendências
+# 1e- Padrões
+# 1f- Relações
+# Importante => deve-se iniciar uma análise de dados pela EDA, só então decidir como buscar a solução para o problema iso garante uma maior assertividade na criação de seu MODELO >- EM OUTRAS PALAVRAS ->> ENTENDA ANTES SEUS DADOS
+# </> EDA versus GRÁFICOS </>
+# Não são a mesma coisa, porém EDA é altamente baseado na produção de gráficos
+# Gráficos de dispersão, boxplots, histogramas, etc.
+# <$> DISTRIBUIÇÃO DE POISSON <$>
+# Mede a probabilidade da ocorrência de eventos em intervalo de tempo, em vez de um certo número de experimentos
+# Importante => os eventos a cada intervalo devem ser independentes
+# Existem tabelas de Poisson para apoiá-lo nos cálculos
+# Como podemos olhar para uma Distribuição de Poisson:
+# 1- P(X = x)
+# 2- P(X < x) - P(X <= x)
+# 3- P(X > x) - P(X >= x)
+# A fómula para a Distribuição de Poisson é: P(X = x) = (e sqr(-λ)) * λ(sqr(x)) / x!
+# Onde -> x é o número de eventos que estão sendo calculados
+# λ -> número médio de eventos que ocorrem no período
+# e = constante = 2.71828
+# Como R pode nos apoiar na solução de problemas que envolvam a distribuição de Poisson
+# Probabilidade exata, por exemplo "ocorrência de dois no segundo dia" -> dpois(x, λ)
+# Probabilidade menos que, ou mais que (lower.tail = F) -> ppois(x, λ, lower.tail=F)
+# Fique atento quando estiver trabalhando em eventos do tipo menor que ou maior que você deverá computar o valor a menos em depois -> isto é necessário porque aquele valor não está incluído no cálcuo da probabilidade
+#
