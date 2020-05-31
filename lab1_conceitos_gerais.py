@@ -373,3 +373,24 @@
 # Teste de Tukey
 #   TukeyHSD(aov)
 # No R não é preciso informar o grau de liberdade ele determina o grau de liberdade automaticamente
+
+# <$> OUTLIERS <$>
+# São valores fora do padrão -> afastado dos demais elementos
+# Existem várias formas de enontrá-los -> Uma variável (boxplot) pode ser representado por mais de uma variável quantitativa (diagramas de dispersao) => assim como podemos ter 'n' variáveis quantitativas como Outliers -> análise através de (Clusters)
+# O que são valores considerados "Anormais"
+# Podem ser:
+#   1- Natural (acaso)
+#   2- Erros
+#   3- Ruídos
+#   4- Exceções
+#   5- Fraudes
+# Mas atenção => podemos ter variáveis categóricas como Outliers ||> portanto, como analista de dados você deve estar muito atento a tudo aquilo que pode perturbar seu sistema, Outliers podem comprometer fortemente sua análise
+# O que fazer quando se detecta a presença de Outliers em sua amostra?
+#   1- Podemos optar por não fazer nada
+#   2- Podemso optar por substitui-los por alguma métrica que seja factível
+#   3- Podemos simplesmente removê-los
+# Mas atenção ||> estas três opções podem comprometer seu projeto, todas são cercadas de controvérsias, logo é fundamental que o Analista tenha uma excelente visão crítica de seu projeto
+# </> OUTILIER NO R </>
+# Boxplot => para uma visulaização e inspeção rápida
+# Boxplot.stats => análise gráfica com um olhar mais crítico apoiado por estatística -> visão numérica
+# Outiliers => avaliados através de pacotes Outiliers -> há uma grande relação de ferramentas no R para esse fim
