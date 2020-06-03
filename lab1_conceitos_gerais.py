@@ -394,3 +394,42 @@
 # Boxplot => para uma visulaização e inspeção rápida
 # Boxplot.stats => análise gráfica com um olhar mais crítico apoiado por estatística -> visão numérica
 # Outiliers => avaliados através de pacotes Outiliers -> há uma grande relação de ferramentas no R para esse fim
+
+# <$> SÉRIES TEMPORAIS <$>
+# Nosso objetivo será:
+#   Estudar o comportamento de uma variável contínua ao longo do tempo
+#   O intervalo de coleta é feita de forma regular
+#   O intervalo deve ser sempre o mesmo => único em toda série -> Exemplo ||> milissegundos; horas; dias; semana; meses; anos ...
+# Quando falamos de Séries Temporais devemos observar:
+#   Uma série temporal => estamos falando de uma mesma variável e seu comportamento no tempo
+#   Deve estar relacionada a um intervalo de tempo
+#   Dependência (ordem) no tempo => a ordem éde extrema importância
+#   Não é possível coletar mais de uma amostra a cada intervalo => não é que não é possível a coleta, mas sim que sua análise irá respeitar sempre intervalos regulares
+#   Supõem que exista alguma dependência entre os intervalos (autocorrelação) => autocorrelação se refere a dependência entre a própria variável sob análise e o tempo
+# Porque se analisa series temporais?
+#   Explicação/compreensão de características importantes
+#   Previsão
+#   Controle
+#   Não se busca em SÉRIES TEMPORAIS uma relação de causa/efeito
+# </> APLICAÇÕES DE SÉRIES TEMPORAIS </>
+#   Econometria
+#   Previsão do tempo
+#   Previsões financeiras
+#   Previsões de fenomenos naturais => por exemplo, prever erupções vulcânicas, maremotos, terremotos, etc
+# Algumas características das Séries Temporais
+#   Estacionárias => em outras palavras, estamos querendo dizer que elas flutuam em torno de uma mesma MÉDIA e VARIÂNCIA
+#   Não estacioárias => MÉDIA e VARIÂNCIA também flutuam na linha do tempo
+#   Estocásticas => possuem um valor aleatório ||> possui uma FÓRMULA + FATOR ALEATÓRIO -> que não pode ser explicado ->> ocorre na maioria dos casos
+#   Determinísticas => são explicadas através de uma fórmula/função
+# </> COMPONENTES DE UMA SÉRIE TEMPORAL </>
+# Valores observados
+#   Tendência => uma tendência pode ser qualquer, por exemplo de subida, descida -> procure observar seu projeto
+#   Sazonalidade => você poderá encontrar períodos de sazonalidade há depender de seus dados -> muito comum
+#   Aleatoridade => está aleatoriedade dificilmente será explicada, mas deverá ser avaliado seu impacto no projeto
+# Uma das funções da Série Temporal é a DECOMPOSIÇÃO
+#   Observado
+#   Tendência
+#   Sazonalidade
+#   Aleatoriedade
+# Outra função importante da Série TemporaL -> são os CICLOS => diferente da sazonalidade os ciclos apresentam um caráter impactante mas não sistêmico como a sazonilidade (por exemplo férias escolares -> ocorre todo ano) -> como exemplo de ciclos podemos pensar em uma crise econômica (impactando nas bolsas, por exemplo), ou uma pandemia -> impactando na economia e em todo seu ecossistema
+# Nota |||> quando falamos em PREVISÃO em Séries Temporais estamos falando em ir além do observado, em outras palavras, queremos extrapolar nossas observações para um outro período de tempo, por exemplo
