@@ -23,4 +23,3 @@ boxplot.stats(iris$Sepal.Width)$out
 outlier(iris$Sepal.Width)
 # Podemos querer observar os Outliers inferiores, para isso fazemos a parametrização de opposite que por default é False para True
 outlier(iris$Sepal.Width, opposite = T)
-

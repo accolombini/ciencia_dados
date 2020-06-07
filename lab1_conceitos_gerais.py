@@ -433,3 +433,104 @@
 #   Aleatoriedade
 # Outra função importante da Série TemporaL -> são os CICLOS => diferente da sazonalidade os ciclos apresentam um caráter impactante mas não sistêmico como a sazonilidade (por exemplo férias escolares -> ocorre todo ano) -> como exemplo de ciclos podemos pensar em uma crise econômica (impactando nas bolsas, por exemplo), ou uma pandemia -> impactando na economia e em todo seu ecossistema
 # Nota |||> quando falamos em PREVISÃO em Séries Temporais estamos falando em ir além do observado, em outras palavras, queremos extrapolar nossas observações para um outro período de tempo, por exemplo
+
+# <$> MACHINE LEARNING <$>
+# Mas afinal o que é Machine Learning?
+# 1- Aprendizado de Máquina
+# 2- Capacidade da máquina de aprender
+# Mas, o que de fato é aprendizagem?
+# É o processo de adquirir conhecimento
+# Por que esse processo?
+#   Porque ele é contínuo e evolutivo
+# Como ocorre?
+#   Através da relação com o ambiente
+# Máquina também é capaz de aprender
+#   Interagindo com o ambiente através de dados
+#   Os dados são usados para a máquina aprender
+#   O aprendizado pode ser persistido através de um "Modelo"
+#   O aprendizado deve evoluir
+#   O aprendizado pode ser medido
+# </> APRENDIZADO </>
+# Contínuo
+#   Com mais dados, o computador pode melhorar seu modelo, ou seja, aprender mais sobre as condições do tempo
+# Mensurável
+#   Podemos medir o quanto o computador aprende
+#   Por exemplo, em 100 previsões, acertou 83 e errou 17
+# Até onde o computador pode aprender?
+#   Limites físicos => memória, processadores, armazenamento
+#   Limites lógicos => algoritmos utilizado
+#   Limites de ambiente => dados -> o computador interage com o ambiente através dos dados
+# Limites de ambiente: Dados
+# Dados que temos:
+#   Temperatura, umidade, aparência, vento, etc
+# O que causa a chuva?
+#   Temperatura, umidade, ventos
+#   Posição e deslocamento das massas de ar
+# </> DEFINIÇÃO PARA MINERAÇÃO DE DADOS </>
+# Mineração de dados são processos de explorar e analisar grandes volumes de dados em busca de padrões, previsões, erros, associações entre outros fatores
+
+# </> APLICAÇÕES </>
+# Medicina, educação, processamento de linguagem natural, bioinformática, detecção de fraude, reconhecimento de fala, finanças, robótica, sistemas de recuperação, mineração de texto entre muitos outros
+# Importante => na linguagem de Machine Learning o termo Classe diz respeito ao ATRIBUTO que queremos prever (nosso interesse)
+# Outro conceito importante é a RELAÇÃO => nada mais é do que o conjunto das intâncias com seus atributos -> em outras palavras, podemos dizer que a Relação é a sua base de dados (tabela ou planilha)
+# Tipos de dados
+#   Nominais -> categóricos
+#   Numéricos
+# TAREFAS
+#   Classificação -> deseja-se prever algo (categórico)
+#   Regressão -> deseja-se prever algo (numérico)
+#   Agrupamentos -> desejo agrupar dados por alguma semelhança que seja pertinente ou impactante para seu projeto
+#   Regras de Associação -> quando se busca a semelhança entre os elementos (exemplo, sugestões de compra em sites de e-comerce)
+# CLASSIFICAÇÃO
+#   Descreve ou prevê algum atributo especial chamado CLASEE
+#   Usamos a CLASSIFICAÇÃO para prever uma fraude, descobrir a qual espécie um animal pertence, prever uma doença ou classificar um tipo de funco, e muito mais
+# REGRESSÃO
+#   Um tipo de classificação, porém, enquanto na classificação a classe é um tipo de dados nominal ou categórico, na REGRESSÃO a CLASSE é NUMÉRICA
+#   Prever a altura de uma pessoa a partir do peso é um exemplo de tarefa de REGRESSÃO
+# AGRUPAMENTOS
+#   O algorimto procura agrupar os dados de seu projeto em um ou vários grupos
+#   No AGRUPAMENTO não existe CLASSE, o objetivo é criar grupos e atribuir às instâncias dos dados nestes grupos, a partir das características, ou atributos destas instâncias que apresentem certa particularidade entre si. Exemplos de uso: identificar grupos de clientes e direcionar campanhas de marketing específicas;identificar tentativas de acesso a rede; categorizar uma nova espécie, e muito mais ...
+# REGRAS DE ASSOCIAÇÃO
+#   Buscam a relação entre itens. A aplicação clássica é em cestas de compras: Quem comprou o produto A também comprou o produto B. Porém, têm ampla aplicação em diagnósticos em Medicina, em instrumentação (sensoriamento), em sensos e muito mais ...
+# SUPERVISIONADO VERSUS NÃO SUPERVISIONADO
+#   As tarefas de mineração de dados são ditas supervisionadas quando existe uma CLASSE, ou um TRIBUTO ESPECIAL com o qual se pode comparar e validar o resultado
+# TAREFA NÃO É ALGORITMO
+#   Tarefas (CLASSIFICAÇÃO, AGRUPAMENTOS, REGRAS DE ASSOCIAÇÃO) podem ter até dezenas de algoritmos -> cada algoritmo terá um resultado diferente, sendo mais adequado a um caso ou outro, em outras palavras nem sempre o mesmo algoritmo será bom para tudo
+# GENERALIZAÇÃO VERSUS SUPER AJUSTES
+#   O objetivo de todo CLASSIFICADOR é criar modelos genéricos
+#   O modelo super ajustado funciona nem com dados de treino, mas tem o desempenho pobre em no ambiente de produção
+# CUSAS DE SUPER AJUSTE
+#   Dados não representativos
+#   Dados não significativos (poucos)
+#   Forma de treinamento -> usar os mesmos dados para treino e teste
+#   Classe RARA -> por exemplo, transações de fraude => a Fraude é uma classe rara. O modelo pode ter dificuldade de aprender uma classe rara =>> solução ESTRATIFICAÇÃO
+#   Modelo incorreto -> modelo criado com aguma parametrização incorreta
+# PROBLEMAS DE ATRIBUTOS DESCONHECIDOS
+#   No treino -> regiões SUL, SUDESTE, CENTRO-OESTE e NORTE =>>observe que neste modelo não há o atributo REGIÃO NORDESTE
+#   Na produção -> surge a região NORDESTE -> como CLASSIFICAR?
+# Como melhorar um MODELO?
+#   Testando diferentes algoritmos
+#   Parametrizando algoritmos
+#   Selecionando e tratando os dados
+#   Seleção de atributos
+# Tipos de Algoritmos utilizados em CLASSIFICAÇÃO
+#   Árvores de decisão
+#   Regras
+#   Naïve Bayes -> baseado na teoria das probabilidades e que supõe que os atributos vão influenciar a classe de forma independente
+#   Redes Baysianas -> pode mostrar eventual dependência entre os dados através de probabilidade condicional
+#   Redes Neurais Artificiais e aprendizado profundo
+#   Máquina de vetor de suporte -> parte-se da definição de um vetor de suporte para avaliar os novos entrantes
+#   Métodos de grupos -> Florestas Aleatórias e Boosting
+#   Aprendizado baseado em instâncias -> clasificador do vizinho mais próximo (Nearest-neighbor) => não usema dados históricos, realizando a classificação em tempo real (não usam modelo)... e muitos outros
+# Uma técnica de CLASSIFICAÇÃO importante é a SELEÇÃO DE ATRIBUTOS
+#   Quantos atributos um bom modelo deve ter?
+#   Quanto mais melhor? Num exemplo clássico de análise de Fraude foi encontrado o seguinte: 
+#       Modelo com 10 atributos -> taxa de acerto 75%
+#       Modelo com 50 atributos -> taxa de acerto 68%
+# MALDIÇÃO DA DIMENSIONALIDADE
+#   A inclusão de muitos (ou mais) atributos em um modelo, degrada sua performance!
+#   Se existem muitos atributos, como saber quais são mais relevantes para o modelo?
+#   Seleção de atributos:
+#       Pode-se fazer "manualmente"
+#       Alguns algoritmos realizam a seleção automaticamente
+
