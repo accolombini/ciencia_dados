@@ -534,3 +534,85 @@
 #       Pode-se fazer "manualmente"
 #       Alguns algoritmos realizam a seleção automaticamente
 
+# <$> MÉTRICAS DE ERROS <$>
+# Previsão de valores numéricos (reais, inteiros)
+# Métricas diferentes da previsão de catergorias
+# Uso:
+#   Regressão clássica
+#   Regressão ML
+#   Series Temporais
+#   Etc
+# Mean Erro (ME) => dependente de Escala -> a média da diferença entre realizado e previsto
+#   Interessante quando se usa o mesmo conjunto de dados com MODELOS de previsão diferentes
+#   ME = Σ(yi - xi) / n
+# Quanto menor for o valor de ME => melhor será o seu MODELO -> normalmente não é um bom modelo, pois há valores positivos e negativos que podem se anualar
+
+# MEAN ABSOLUTE ERROS (MAE) => dependente de Escala -> a média da diferença ABSOLUTA entre realizado e previsto
+#   Embora o cálculo seja semelhante consegue-se eliminar o problema da eliminação por valores negativos
+#   MAE = Σ(pi - ti) / n
+# Quanto menor for o valor de MAE => melhor será o seu MODELO
+
+# ROOT MEAN SQUARED ERROS (RMSE) => independente de Escala -> o desvio padrão da amostra da diferença entre o previsto e o teste (realizado)
+#   RMSE = SQRT(Σ(pi -ti)sqr2 / N)
+# Quanto menor for o valor de RMSE => melhor será o seu MODELO
+
+# MEAN PERCENTAGE ERROR (MPE) => independente de Escala -> a diferença percentual de erro => nos dá uma taxa de erro em porcentagem
+#   MPE = (Σ((ti - pi) / (ti - 100)) / N)
+# Novamente teremos o problema de valores positivos e negativos comprometendo os resultados
+
+# MEAN ABSOLUTE PERCENTAGE ERROR (MAPE) => independente de Escala -> a diferença ABSOLUTA percentual de erro => nos dá uma taxa de erro em porcentagem
+#   MAPE = 100% / n Σ |((Αt - Ft) / At)|
+# É uma métrica independente de escala em termos percentuais
+
+# <$> CODIFICAÇÃO DE CATEGORIAS <$>
+# Algoritmos entendem números
+# Categorical Encoding é o Processo de Transformar Categorias em Números -> transformar dados categóricos em números
+# Duas Formas => técnicas principais para transforma dados categóricos em números:
+#   Label enconding
+#   One-hot enconding
+# LABEL ENCODING -> cada categoria recebe um número, normalmente em ordem alfabética -> Normalmente os dados categóricos são colocados em ordem alfabética e são atribuídos números a cada um deles, por exemplo, estado civil -> ordem alfabética => Casado; Divorciado; Solteiro >>= serão substitidos por 0, 1, 2 respectivamente
+#   Atenção -> o Label Enconding tem um problema, pois ao atribuir valores numéricos ele não leva em conta um possivel peso de uma variável, por exemplo, imagine que estivessemos trabalhando com categorias de clientes (prata, ouro, platina, etc) -> seriam substituídos por números deixando de lados os privilégios das categorias
+
+# ONE-HOT ENCODING
+#   Cada categoria é transformada em outro atributo => Dummy variable
+#   Um valor binário informa a ocorrência
+#   Neste caso poderemos cair no problema da DUMMY VARIABLE TRAP
+#       O valor dos atributos se tornam altamente previsível
+#       Resultado, correlação entre as variáveis independentes => multicolinearidade
+#       Solução => excluir um dos atributos!
+
+# QUAL TÉCNICA USAR?
+#   LABEL ENCODING:
+#       Há ordem (progr. Junior, Pleno, Sênior)
+#       Grande número de categorias, não da para usar One-hot encoding
+#   ONE-HOT ENCODING
+#       Não há ordem
+#       Número de categorias é pequeno
+
+# <$> DIMENSIONAMENTO DE CARACTERÍSTICAS => Feature Scalling <$>
+# Processo de transformação de dados numéricos
+# Variáveis em esclas diferentes -> exemplo, peso e altura (Kg e metros)
+#   Congtribuem de forma desbalanceada para o modelo
+#   Exemplo -> salário e altura -> a ideia é converter as escalas numéricas para valores equivalentes
+# Gradient Descent converge mais rapidamente para o mínimo local
+
+# PADRONIZAÇÃO (Z-SCORE)
+# Dados aproximadamente da média = 0 e desvio padrão = 1
+# Podem ser negativos
+# Não afeta outliers
+# Deve ser usado na maioria dos casos
+#   Xp = (X - μ) / σ
+
+# NORMALIZAÇÃO (MIN-MAX)
+#   Transforma para escala comum entre zero e 1
+#   Usado em processamento de imagens e RNA
+#   Quando não sabemos a distribuicão dos dados
+#   Quando precisão ser positivos
+#   Algoritmos não "requerem" dados normais
+#   Remove outliers pois impõe "limites" -> pode seruma desvantagem a ser considerada
+#   Xn = (X - Xmin) / (Xmas - Xmin)
+
+# DIMENSIONAMENTO DE CARACTERÍSTICAS
+#   Não vai necessariamente melhorar seu modelo!
+#   Árvores de decisão não precisam de nenhum tipo
+#   Não se aplica a atributos categóricos transformados
