@@ -616,3 +616,41 @@
 #   Não vai necessariamente melhorar seu modelo!
 #   Árvores de decisão não precisam de nenhum tipo
 #   Não se aplica a atributos categóricos transformados
+
+# <$> AGRUPAMENTO => Conceitos <$>
+#   Tarefas não supervisionadas
+#   Não existem classes
+#   Objetivo é criar grupos a partir de atributos (características) das instâncias analisadas
+# TIPOS DE AGRUPAMENTOS
+#   Agrupamento completo => cada elemento é adicionado em um único grupo
+#   Agrupamento parcial => cada instância pode pertencer a mais de um grupo
+#   Modelo difuso => cada elemento pertence a um grupo segundo uma probabilidade
+#   Modelo hierárquico => permite que o grupo tenha subgrupos
+#   Agrupa todos os elementos => não há sobras
+#   Pode deixar elementos sem agrupar => RUÍDOS
+
+# </> ALGUNS ALGORITMOS INTERESSANTES => K-MEANS E K-MEDOID </>
+#   Simples
+#   Baseado em protótipo
+#   Encontra um número de grupos definido pelo usuário
+#   Agrupa todos os objetos
+#   É preciso definir os centróides -> esta é considerada uma etapa fundamental
+#   Trabalha com o conceito de Distância Euclidiana
+#   K-MEANS => protótipo é um centroíde => onde a média de grupo de pontos quase nunca é um ponto real de dados
+#   K-MEDOID => protótipo baseado em MEDÓIDE -> neste caso o ponto mais representativo é um ponto real de dados
+# ALGUMAS RESTRIÇÕES DESTES ALGORITMOS <$>
+#   Apresentam dificuldades para detectar grupos naturais, não esféricos, de tamanho ou densidade muito diferentes
+#   Restrito a dados que exista uma noção de centro
+#   Pode ser melhorado escolhendo os centros (uso de SEEDS)
+
+# <$> DBSCAN => ALGORITMO DE AGRUPAMENTO MAIS ROBUSTO <$>
+#   Baseado em densidade
+#   Menos afetado por ruído
+#   O número de grupos é definido automaticamente
+#   Pontos de baixa densidade são definidos com ruído e não agrupados
+#   A densidade é baseada no raio especificado => Um ponto pode estar no interior, no limite, ou sem classificação -> neste caso => um Ruído
+
+# <$> HIERÁRQUICO <$>
+#   Aglomerativa => começa com pontos em grupos individuais e a cada etapa funde os pares mais próximos. Requer uma noção de proximidade mais comuns
+#   Divisiva => começa incluindo todos e a cada etapa divide até que reste apenas grupos únicos
+#   Denograma => são representados por denogramas
