@@ -654,3 +654,16 @@
 #   Aglomerativa => começa com pontos em grupos individuais e a cada etapa funde os pares mais próximos. Requer uma noção de proximidade mais comuns
 #   Divisiva => começa incluindo todos e a cada etapa divide até que reste apenas grupos únicos
 #   Denograma => são representados por denogramas
+
+# <$> REGRAS DE ASSOCIAÇÃO <$>
+# Definições:
+#   Busca a relação entre itens -> como exemplo quem compra o produto A normalmente leva o produto B
+# Conceitos:
+#   SUPORTE => número de transações que contém todos os itens da transação
+#   CONFIANÇA => indica a proporção de vezes que, em uma transação contendo o elemento A também contém o elemento B
+#   FORÇA DA REGRA => é a soma do SUPORTE + CONFIANÇA
+# Existem alguns algoritmos para mineirar regras de Associação
+#   APRIORI E FP-GROW
+#       APRIORI E FP-GROW => aão algoritmos mais comuns na mineração de regras de ASSOCIAÇÃO
+#       APRIORI => é baseado no pricício de que se um conjunto de otens é freqiemte, um subconjunto destes itens também será frequente >>= o princípio do contrário também é válido
+#       FP-GROW => induz árvores, e busca sobreposição destas árvores, inde os itens são frequentes
